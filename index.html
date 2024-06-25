@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping-cart</title>
+    <link rel="stylesheet" href="/public/output.css">
+  </head>
+  <body class="bg-blue-300">
+    <header id="header-element" class="bg-blue-200  flex justify-center cursor-pointer p-2">
+      <div class="flex gap-20 bg-blue-300 rounded py-2 w-full justify-center ">
+        <a to="home" class="hover:text-blue-700 p-2 rounded font-bold">Home</a>
+        <a to="cart" class="hover:text-blue-700 p-2 rounded font-bold">Cart</a>
+        <a to="about" class="hover:text-blue-700 p-2 rounded font-bold">About</a>
+
+      </div>
+    </header>
+
+    <div id="login" class="page h-screen w-full bg-blue-200 flex items-center justify-center" >
+        <form id="login-form" class="bg-white p-8 rounded-lg w-full max-w-md">
+
+          <div>
+            <label for="email" class="block text-gray-700 text-lg font-bold mb-2">Email</label>
+            <input id="login-email" type="text" name="email" class="border rounded p-2 w-full"  placeholder="samkelo05@gmail.com" required>
+          </div>
+
+          <div>
+            <label for="password" class="block text-gray-700 text-lg font-bold mb-2">Password</label>
+            <input id="login-password" type="password" name="password" class="border rounded  p-2 w-full " required>
+          </div>
+
+          <div class='pt-3'>
+            <button id="login" class="bg-blue-500 rounded font-bold py-2 px-44 " type="submit">Login</button>
+          </div>
+          <a to="register" class="text-sm underline cursor-pointer">register</a>
+      </form>
+    </div>
+
+    <!-- REGISTER PAGE -->
+
+    <div id="register" class="page h-screen w-full bg-blue-200 flex items-center justify-center" >
+      <form id="register-form" class="bg-white p-8 rounded-lg w-full max-w-md">
+
+        <div>
+          <label for="name" class="block text-gray-700 text-lg font-bold mb-2">Name</label>
+          <input id="register-name" type="text" name="name" class="border rounded p-2 w-full" required>
+        </div>
+
+        <div>
+          <label for="email" class="block text-gray-700 text-lg font-bold mb-2">Email</label>
+          <input id="register-email" type="text" name="email" class="border rounded p-2 w-full"  placeholder="samkelo05@gmail.com" >
+        </div>
+
+        <div>
+          <label for="password" class="block text-gray-700 text-lg font-bold mb-2">Password</label>
+          <input id="register-password" type="password" name="password" class="border rounded  p-2 w-full " required>
+        </div>
+
+        <div class='pt-3'>
+          <button id="register" class="bg-blue-500 rounded font-bold py-2 px-44 " type="submit">register</button>
+        </div>
+        <a to="login" class="text-sm underline cursor-pointer">Login</a>
+      </form>
+    </div>
+ 
+<!-- HOME PAGE -->
+
+    <div id="home" class="page bg-blue-200 h-screen">
+        <div class="flex justify-items-stretch p-4" >
+          <a to="add-product-page" class="bg-green-500 py-3 px-20 rounded font-bold" href="add-product-page">Add</a>
+        </div>
+
+        <div class="bg-blue-200 h-80 p-4 grid md:grid-cols-4 sm:grid-cols-2 gap-2">
+
+          <div id="product-template" class="bg-white border-2 shadow-lg border-black template" >
+            <div class="flex justify-center p-2"> 
+              <img src="data.image_url" alt="">
+            </div>
+
+            <div class="p-4">
+              <p><strong>data.name</strong></p>
+              <p><strong>R data.price</strong></p>
+            </div>
+
+            <div class="p-2">
+              <i  id="data.id"  class="fa-solid fa-trash delete-product bg-red-500 rounded font-bold py-2 px-2"></i>
+              <i  id="data.id" class="edit-product fa-solid fa-pen bg-blue-500 rounded font-bold py-2 px-2 cursor-pointer"></i>
+            </div>
+          </div>
+        </div>
+
+    </div>
+
+    <div id="del" class="page ">
+      <h1>Products page</h1>
+    </div>
+
+    <div id="cart" class="page">
+      <h1>Cart page</h1>
+    </div>
+
+    <div id="about" class="page">
+      <h1>About page</h1>
+    </div>
+
+    <!-- EDITING PRODUCT -->
+
+    <div id="edit-product" class="page h-screen flex justify-center bg-blue-200">
+      <form id="edit-product-form" class="bg-blue-200 p-8 rounded-lg w-full max-w-md">
+        <div>
+          <label for="image-url" class="block text-gray-700 text-lg font-bold mb-2">Image-Url</label>
+          <input type="url" name="image_url" class="border rounded p-2 w-full" required>
+        </div>
+
+        <div>
+          <label for="product-name" class="block text-gray-700 text-lg font-bold mb-2">Product-Name</label>
+          <input  type="text" value="read" name="name" class="border rounded p-2 w-full" >
+        </div>
+
+        <div>
+          <label for="description" class="block text-gray-700 text-lg font-bold mb-2">Description</label>
+          <input type="bio" name="description" class="border rounded  p-2 w-full " required>
+        </div>
+
+        <div>
+          <label for="price" class="block text-gray-700 text-lg font-bold mb-2">Price</label>
+          <input type="number" name="price" class="border rounded  p-2 w-full " required>
+        </div>
+
+        <div class='pt-3'>
+          <button  class="bg-blue-500 rounded font-bold py-2 px-44 " type="submit" >Update</button>
+        </div>
+      </form>
+    </div>
+
+<!-- ADD PRODUCT PAGE -->
+
+    <div id="add-product-page" class="page h-screen flex justify-center bg-blue-200">
+      <form id="add-product-form" class="bg-blue-200 p-8 rounded-lg w-full max-w-md">
+        <div>
+          <label for="image-url" class="block text-gray-700 text-lg font-bold mb-2">Image-Url</label>
+          <input type="url" name="image_url" class="border rounded p-2 w-full" required>
+        </div>
+
+        <div>
+          <label for="product-name" class="block text-gray-700 text-lg font-bold mb-2">Product-Name</label>
+          <input  type="text" name="name" class="border rounded p-2 w-full" >
+        </div>
+
+        <div>
+          <label for="description" class="block text-gray-700 text-lg font-bold mb-2">Description</label>
+          <input type="bio" name="description" class="border rounded  p-2 w-full " required>
+        </div>
+
+        <div>
+          <label for="price" class="block text-gray-700 text-lg font-bold mb-2">Price</label>
+          <input type="number" name="price" class="border rounded  p-2 w-full " required>
+        </div>
+
+        <div class='pt-3'>
+          <button id="append-product" class="bg-blue-500 rounded font-bold py-2 px-44 " type="submit" >ADD</button>
+        </div>
+      </form>
+      
+    </div>
+    <script type="module" src="/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js" integrity="sha512-u3fPA7V8qQmhBPNT5quvaXVa1mnnLSXUep5PS1qo5NRzHwG19aHmNJnj1Q8hpA/nBWZtZD4r4AX6YOt5ynLN2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </body>
+</html>
